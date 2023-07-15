@@ -1,4 +1,4 @@
-var lowerCase = [
+var lowercaseChar = [
   "a",
   "b",
   "c",
@@ -27,7 +27,7 @@ var lowerCase = [
   "z",
 ];
 
-var upperCase = [
+var uppercaseChar = [
   "A",
   "B",
   "C",
@@ -56,9 +56,9 @@ var upperCase = [
   "Z",
 ];
 
-var numericCharacter = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var numericChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-var specialCharacter = [
+var specialChar = [
   " ",
   "!",
   "#",
@@ -108,26 +108,31 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   //length of password is first prompt. must be between 8 and 128 characters long
-  
-  //prompt 2 is lowercase characters
-  //prompt 3 is upper case characters
-  //prompt 4 is numeric characters
-  //prompt 5 is special characters
-  //we need to make sure at least one of the prompts was selected
-  //next, the password is generated
+  var length = window.prompt(
+    "Please select a password length between 8 and 128 characters."
+  );
+  if (length < 8) {
+    alert("Length must be between 8 and 128 characters!");
+    return;
+  }
+  if (length > 128) {
+    alert("Length must be between 8 and 128 characters!");
+  }
+
+  window.confirm("Use lower case letters?");
+
+  window.confirm("Use upper case letters?");
+
+  window.confirm("Use numbers?");
+
+  window.confirm("Use special characters?");
+
+  return;
 }
 
-//length must be between 8 and 128 characters
-
-
-window.prompt(
-  "How many characters would you like your password to be? Please choose between 8 and 128 characters."
-);
-
-window.confirm("Use lower case letters?");
-
-window.confirm("Use upper case letters?");
-
-window.confirm("Use numbers?");
-
-window.confirm("Use special characters?");
+//prompt 2 is lowercase characters
+//prompt 3 is upper case characters
+//prompt 4 is numeric characters
+//prompt 5 is special characters
+//we need to make sure at least one of the prompts was selected
+//next, the password is generated
