@@ -82,7 +82,6 @@ var specialChar = [
   "?",
   "@",
   "[",
-  "\\",
   "^",
   "_",
   "`",
@@ -91,6 +90,9 @@ var specialChar = [
   "}",
   "~",
 ];
+
+var selectionArray = [];
+var passwordLength = [];
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -103,29 +105,44 @@ function writePassword() {
   passwordText.value = password;
 }
 
+function generatePassword() {
+
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-function generatePassword() {
+function promptResponse() {
   //length of password is first prompt. must be between 8 and 128 characters long
-  var length = window.prompt(
+  var passwordLength = parseInt(window.prompt(
     "Please select a password length between 8 and 128 characters."
-  );
-  if (length < 8) {
+  ));
+  if (passwordLength < 8) {
     alert("Length must be between 8 and 128 characters!");
     return;
   }
-  if (length > 128) {
+  if (passwordLength > 128) {
     alert("Length must be between 8 and 128 characters!");
   }
+  if (passwordLength = isNaN) {
+    alert("Value must be a number.")
+  }
 
-  window.confirm("Use lower case letters?");
+  if (window.confirm("Use lower case characters?")); {
+    selectionArray = selectionArray.concat(lowercaseChar);
+  }
 
-  window.confirm("Use upper case letters?");
+ if (window.confirm("Use upper case characters?")); {
+  selectionArray = selectionArray.concat(uppercaseChar);
+ }
 
-  window.confirm("Use numbers?");
+ if (window.confirm("Use numeric characters?")); {
+  selectionArray = selectionArray.concat(numericChar);
+ }
 
-  window.confirm("Use special characters?");
+  if (window.confirm("Use special characters?")); {
+    selectionArray = selectionArray.concat(specialChar);
+  }
 
   return;
 }
