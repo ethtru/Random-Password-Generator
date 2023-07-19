@@ -1,3 +1,5 @@
+//variables that will be used in this application
+
 var lowercaseChar = [
   "a",
   "b",
@@ -104,6 +106,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
+//generate password function with for loop  for randomization
 function generatePassword() {
   var userChoice = promptResponse();
   console.log(userChoice)
@@ -118,6 +121,8 @@ function generatePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//function for the responses given to prompts
 
 function promptResponse() {
   //length of password is first prompt. must be between 8 and 128 characters long
@@ -162,11 +167,4 @@ function promptResponse() {
   return selectionArray;
 }
 
-//will need some kind of "for" loop for running through each batch of variables
 
-//prompt 2 is lowercase characters
-//prompt 3 is upper case characters
-//prompt 4 is numeric characters
-//prompt 5 is special charactersse
-//we need to make sure at least one of the prompts was selected
-//next, the password is generated
